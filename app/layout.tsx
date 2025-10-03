@@ -28,10 +28,10 @@ export default function RootLayout({
         <main className="min-h-screen">
           {children}
         </main>
-        <footer className="bg-secondary py-12 mt-20">
+        <footer className="bg-gradient-to-b from-transparent to-secondary-light py-16 mt-32 border-t border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center text-gray-400">
-              <p>&copy; {new Date().getFullYear()} Elite Sports Car Dealership. All rights reserved.</p>
+              <p className="text-sm">&copy; {new Date().getFullYear()} Elite Sports Car Dealership. All rights reserved.</p>
             </div>
           </div>
         </footer>

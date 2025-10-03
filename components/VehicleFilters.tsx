@@ -68,19 +68,19 @@ export default function VehicleFilters({ vehicles }: VehicleFiltersProps) {
   return (
     <div>
       {/* Filters */}
-      <div className="bg-secondary-light rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-bold mb-4">Filter Vehicles</h2>
+      <div className="bg-gradient-to-r from-secondary-light to-secondary-lighter rounded-2xl p-8 mb-12 border border-gray-800 shadow-xl">
+        <h2 className="text-2xl font-bold mb-6 gradient-text">Filter Vehicles</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Brand Filter */}
           <div>
-            <label className="block text-sm font-semibold mb-2 text-gray-400">
+            <label className="block text-sm font-semibold mb-3 text-gray-300 uppercase tracking-wide">
               Brand
             </label>
             <select
               value={selectedBrand}
               onChange={(e) => setSelectedBrand(e.target.value)}
-              className="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full bg-secondary border border-gray-700 rounded-xl px-5 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
             >
               <option value="all">All Brands</option>
               {brands.map((brand) => (
@@ -93,13 +93,13 @@ export default function VehicleFilters({ vehicles }: VehicleFiltersProps) {
 
           {/* Condition Filter */}
           <div>
-            <label className="block text-sm font-semibold mb-2 text-gray-400">
+            <label className="block text-sm font-semibold mb-3 text-gray-300 uppercase tracking-wide">
               Condition
             </label>
             <select
               value={selectedCondition}
               onChange={(e) => setSelectedCondition(e.target.value)}
-              className="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full bg-secondary border border-gray-700 rounded-xl px-5 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
             >
               <option value="all">All Conditions</option>
               <option value="new">New</option>
@@ -110,13 +110,13 @@ export default function VehicleFilters({ vehicles }: VehicleFiltersProps) {
 
           {/* Price Range Filter */}
           <div>
-            <label className="block text-sm font-semibold mb-2 text-gray-400">
+            <label className="block text-sm font-semibold mb-3 text-gray-300 uppercase tracking-wide">
               Price Range
             </label>
             <select
               value={priceRange}
               onChange={(e) => setPriceRange(e.target.value)}
-              className="w-full bg-secondary border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full bg-secondary border border-gray-700 rounded-xl px-5 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
             >
               <option value="all">All Prices</option>
               <option value="under100k">Under $100,000</option>
@@ -128,7 +128,7 @@ export default function VehicleFilters({ vehicles }: VehicleFiltersProps) {
         </div>
 
         {/* Results Count */}
-        <div className="mt-4 text-gray-400">
+        <div className="mt-6 text-gray-400 text-sm font-medium">
           Showing {filteredVehicles.length} of {vehicles.length} vehicles
         </div>
       </div>
@@ -141,8 +141,8 @@ export default function VehicleFilters({ vehicles }: VehicleFiltersProps) {
           ))}
         </div>
       ) : (
-        <div className="text-center py-12 bg-secondary-light rounded-lg">
-          <p className="text-gray-400 text-lg">
+        <div className="text-center py-20 bg-gradient-to-r from-secondary-light to-secondary-lighter rounded-2xl border border-gray-800">
+          <p className="text-gray-400 text-xl mb-6">
             No vehicles match your current filters.
           </p>
           <button
@@ -151,7 +151,7 @@ export default function VehicleFilters({ vehicles }: VehicleFiltersProps) {
               setSelectedCondition('all')
               setPriceRange('all')
             }}
-            className="mt-4 text-primary hover:text-primary-dark font-semibold"
+            className="bg-gradient-to-r from-primary to-primary-light hover:shadow-glow text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
           >
             Clear Filters
           </button>

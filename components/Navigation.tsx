@@ -7,11 +7,11 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-secondary border-b border-gray-800 sticky top-0 z-50">
+    <nav className="bg-secondary/95 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-primary">
+            <Link href="/" className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent hover:scale-105 transition-transform">
               Elite Sports Cars
             </Link>
           </div>
@@ -21,19 +21,19 @@ export default function Navigation() {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link 
                 href="/vehicles"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white font-medium transition-all hover:scale-105"
               >
                 Inventory
               </Link>
               <Link 
                 href="/brands"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white font-medium transition-all hover:scale-105"
               >
                 Brands
               </Link>
               <Link 
                 href="/locations"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white font-medium transition-all hover:scale-105"
               >
                 Locations
               </Link>
@@ -76,25 +76,25 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-800">
+        <div className="md:hidden border-t border-gray-800 bg-secondary-light/95 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               href="/vehicles"
-              className="block px-3 py-2 text-gray-300 hover:text-white transition-colors"
+              className="block px-3 py-3 text-gray-300 hover:text-white font-medium transition-colors rounded-lg hover:bg-secondary-lighter"
               onClick={() => setIsOpen(false)}
             >
               Inventory
             </Link>
             <Link
               href="/brands"
-              className="block px-3 py-2 text-gray-300 hover:text-white transition-colors"
+              className="block px-3 py-3 text-gray-300 hover:text-white font-medium transition-colors rounded-lg hover:bg-secondary-lighter"
               onClick={() => setIsOpen(false)}
             >
               Brands
             </Link>
             <Link
               href="/locations"
-              className="block px-3 py-2 text-gray-300 hover:text-white transition-colors"
+              className="block px-3 py-3 text-gray-300 hover:text-white font-medium transition-colors rounded-lg hover:bg-secondary-lighter"
               onClick={() => setIsOpen(false)}
             >
               Locations
